@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B74FFC91BD7FCD6003EEC2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFC81BD7FCD6003EEC2E /* main.m */; };
+		4B74FFCC1BD7FCD6003EEC2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFCB1BD7FCD6003EEC2E /* AppDelegate.m */; };
+		4B74FFD21BD7FCD6003EEC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFD01BD7FCD6003EEC2E /* Main.storyboard */; };
+		4B74FFD41BD7FCD6003EEC2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFD31BD7FCD6003EEC2E /* Images.xcassets */; };
+		4B74FFD71BD7FCD6003EEC2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFD51BD7FCD6003EEC2E /* LaunchScreen.xib */; };
+		4B74FFE31BD7FCD6003EEC2E /* InAppSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFE21BD7FCD6003EEC2E /* InAppSDKDemoTests.m */; };
+		4B74FFEF1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFED1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png */; };
+		4B74FFF01BD83874003EEC2E /* cybersource_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFEE1BD83874003EEC2E /* cybersource_logo@2x.png */; };
+		4BE86C8A1BE420850000FB8B /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE86C891BE420850000FB8B /* InAppSDK.framework */; };
+		4BE86C8B1BE420850000FB8B /* InAppSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE86C891BE420850000FB8B /* InAppSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BF98FCD1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FCC1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m */; };
+		4BF98FD01BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FCF1BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m */; };
+		4BF98FD41BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FD31BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m */; };
+		4BF98FD91BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FD81BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m */; };
+		4BF98FDB1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF98FDA1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4B74FFDD1BD7FCD6003EEC2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B74FFBB1BD7FCD6003EEC2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B74FFC21BD7FCD6003EEC2E;
+			remoteInfo = InAppSDKDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4BE86C821BE3FAF00000FB8B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4BE86C8B1BE420850000FB8B /* InAppSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4B74FFC31BD7FCD6003EEC2E /* InAppSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InAppSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B74FFC71BD7FCD6003EEC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B74FFC81BD7FCD6003EEC2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4B74FFCA1BD7FCD6003EEC2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4B74FFCB1BD7FCD6003EEC2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4B74FFD11BD7FCD6003EEC2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B74FFD31BD7FCD6003EEC2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4B74FFD61BD7FCD6003EEC2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4B74FFDC1BD7FCD6003EEC2E /* InAppSDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InAppSDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B74FFE11BD7FCD6003EEC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B74FFE21BD7FCD6003EEC2E /* InAppSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoTests.m; sourceTree = "<group>"; };
+		4B74FFED1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cybersource_logo_tab_bar@2x.png"; sourceTree = "<group>"; };
+		4B74FFEE1BD83874003EEC2E /* cybersource_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cybersource_logo@2x.png"; sourceTree = "<group>"; };
+		4BE86C891BE420850000FB8B /* InAppSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InAppSDK.framework; path = Frameworks/InAppSDK.framework; sourceTree = "<group>"; };
+		4BF98FCB1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoCardFieldsValidator.h; sourceTree = "<group>"; };
+		4BF98FCC1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoCardFieldsValidator.m; sourceTree = "<group>"; };
+		4BF98FCE1BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoStringValidator.h; sourceTree = "<group>"; };
+		4BF98FCF1BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoStringValidator.m; sourceTree = "<group>"; };
+		4BF98FD11BE7DFDE00B8F5F6 /* InAppSDKDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InAppSDKDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4BF98FD21BE7FCD800B8F5F6 /* InAppSDKDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoViewController.h; sourceTree = "<group>"; };
+		4BF98FD31BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoViewController.m; sourceTree = "<group>"; };
+		4BF98FD71BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoSignatureGenerator.h; sourceTree = "<group>"; };
+		4BF98FD81BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoSignatureGenerator.m; sourceTree = "<group>"; };
+		4BF98FDA1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cybersource_logo_Demo@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B74FFC01BD7FCD6003EEC2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BE86C8A1BE420850000FB8B /* InAppSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B74FFD91BD7FCD6003EEC2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B74FFBA1BD7FCD6003EEC2E = {
+			isa = PBXGroup;
+			children = (
+				4BE86C891BE420850000FB8B /* InAppSDK.framework */,
+				4B74FFC51BD7FCD6003EEC2E /* InAppSDKDemo */,
+				4B74FFDF1BD7FCD6003EEC2E /* InAppSDKDemoTests */,
+				4B74FFC41BD7FCD6003EEC2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4B74FFC41BD7FCD6003EEC2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B74FFC31BD7FCD6003EEC2E /* InAppSDKDemo.app */,
+				4B74FFDC1BD7FCD6003EEC2E /* InAppSDKDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B74FFC51BD7FCD6003EEC2E /* InAppSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4BF98FDA1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png */,
+				4BF98FD71BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.h */,
+				4BF98FD81BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m */,
+				4BF98FD21BE7FCD800B8F5F6 /* InAppSDKDemoViewController.h */,
+				4BF98FD31BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m */,
+				4BF98FD11BE7DFDE00B8F5F6 /* InAppSDKDemo-Prefix.pch */,
+				4BF98FCE1BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.h */,
+				4BF98FCF1BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m */,
+				4BF98FCB1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.h */,
+				4BF98FCC1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m */,
+				4B74FFED1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png */,
+				4B74FFEE1BD83874003EEC2E /* cybersource_logo@2x.png */,
+				4B74FFCA1BD7FCD6003EEC2E /* AppDelegate.h */,
+				4B74FFCB1BD7FCD6003EEC2E /* AppDelegate.m */,
+				4B74FFD01BD7FCD6003EEC2E /* Main.storyboard */,
+				4B74FFD31BD7FCD6003EEC2E /* Images.xcassets */,
+				4B74FFD51BD7FCD6003EEC2E /* LaunchScreen.xib */,
+				4B74FFC61BD7FCD6003EEC2E /* Supporting Files */,
+			);
+			path = InAppSDKDemo;
+			sourceTree = "<group>";
+		};
+		4B74FFC61BD7FCD6003EEC2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B74FFC71BD7FCD6003EEC2E /* Info.plist */,
+				4B74FFC81BD7FCD6003EEC2E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B74FFDF1BD7FCD6003EEC2E /* InAppSDKDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B74FFE21BD7FCD6003EEC2E /* InAppSDKDemoTests.m */,
+				4B74FFE01BD7FCD6003EEC2E /* Supporting Files */,
+			);
+			path = InAppSDKDemoTests;
+			sourceTree = "<group>";
+		};
+		4B74FFE01BD7FCD6003EEC2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B74FFE11BD7FCD6003EEC2E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B74FFC21BD7FCD6003EEC2E /* InAppSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B74FFE61BD7FCD6003EEC2E /* Build configuration list for PBXNativeTarget "InAppSDKDemo" */;
+			buildPhases = (
+				4B74FFBF1BD7FCD6003EEC2E /* Sources */,
+				4B74FFC01BD7FCD6003EEC2E /* Frameworks */,
+				4B74FFC11BD7FCD6003EEC2E /* Resources */,
+				4BE86C821BE3FAF00000FB8B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InAppSDKDemo;
+			productName = InAppSDKDemo;
+			productReference = 4B74FFC31BD7FCD6003EEC2E /* InAppSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4B74FFDB1BD7FCD6003EEC2E /* InAppSDKDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B74FFE91BD7FCD6003EEC2E /* Build configuration list for PBXNativeTarget "InAppSDKDemoTests" */;
+			buildPhases = (
+				4B74FFD81BD7FCD6003EEC2E /* Sources */,
+				4B74FFD91BD7FCD6003EEC2E /* Frameworks */,
+				4B74FFDA1BD7FCD6003EEC2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B74FFDE1BD7FCD6003EEC2E /* PBXTargetDependency */,
+			);
+			name = InAppSDKDemoTests;
+			productName = InAppSDKDemoTests;
+			productReference = 4B74FFDC1BD7FCD6003EEC2E /* InAppSDKDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B74FFBB1BD7FCD6003EEC2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "CyberSource, a Visa Company";
+				TargetAttributes = {
+					4B74FFC21BD7FCD6003EEC2E = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					4B74FFDB1BD7FCD6003EEC2E = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 4B74FFC21BD7FCD6003EEC2E;
+					};
+				};
+			};
+			buildConfigurationList = 4B74FFBE1BD7FCD6003EEC2E /* Build configuration list for PBXProject "InAppSDKDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4B74FFBA1BD7FCD6003EEC2E;
+			productRefGroup = 4B74FFC41BD7FCD6003EEC2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B74FFC21BD7FCD6003EEC2E /* InAppSDKDemo */,
+				4B74FFDB1BD7FCD6003EEC2E /* InAppSDKDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B74FFC11BD7FCD6003EEC2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B74FFEF1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png in Resources */,
+				4B74FFD21BD7FCD6003EEC2E /* Main.storyboard in Resources */,
+				4B74FFD71BD7FCD6003EEC2E /* LaunchScreen.xib in Resources */,
+				4BF98FDB1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png in Resources */,
+				4B74FFF01BD83874003EEC2E /* cybersource_logo@2x.png in Resources */,
+				4B74FFD41BD7FCD6003EEC2E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B74FFDA1BD7FCD6003EEC2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B74FFBF1BD7FCD6003EEC2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BF98FD91BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m in Sources */,
+				4BF98FCD1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m in Sources */,
+				4BF98FD41BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m in Sources */,
+				4B74FFCC1BD7FCD6003EEC2E /* AppDelegate.m in Sources */,
+				4B74FFC91BD7FCD6003EEC2E /* main.m in Sources */,
+				4BF98FD01BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B74FFD81BD7FCD6003EEC2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B74FFE31BD7FCD6003EEC2E /* InAppSDKDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4B74FFDE1BD7FCD6003EEC2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B74FFC21BD7FCD6003EEC2E /* InAppSDKDemo */;
+			targetProxy = 4B74FFDD1BD7FCD6003EEC2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4B74FFD01BD7FCD6003EEC2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B74FFD11BD7FCD6003EEC2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4B74FFD51BD7FCD6003EEC2E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B74FFD61BD7FCD6003EEC2E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B74FFE41BD7FCD6003EEC2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4B74FFE51BD7FCD6003EEC2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B74FFE71BD7FCD6003EEC2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/**",
+					/Users/speriyas/Projects/CyberSource/Frameworks,
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/InAppSDKDemo/InAppSDKDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/InAppSDKDemo/**",
+				);
+				INFOPLIST_FILE = InAppSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B74FFE81BD7FCD6003EEC2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/**",
+					/Users/speriyas/Projects/CyberSource/Frameworks,
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/InAppSDKDemo/InAppSDKDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/InAppSDKDemo/**",
+				);
+				INFOPLIST_FILE = InAppSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4B74FFEA1BD7FCD6003EEC2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InAppSDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InAppSDKDemo.app/InAppSDKDemo";
+			};
+			name = Debug;
+		};
+		4B74FFEB1BD7FCD6003EEC2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InAppSDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InAppSDKDemo.app/InAppSDKDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B74FFBE1BD7FCD6003EEC2E /* Build configuration list for PBXProject "InAppSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B74FFE41BD7FCD6003EEC2E /* Debug */,
+				4B74FFE51BD7FCD6003EEC2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B74FFE61BD7FCD6003EEC2E /* Build configuration list for PBXNativeTarget "InAppSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B74FFE71BD7FCD6003EEC2E /* Debug */,
+				4B74FFE81BD7FCD6003EEC2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B74FFE91BD7FCD6003EEC2E /* Build configuration list for PBXNativeTarget "InAppSDKDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B74FFEA1BD7FCD6003EEC2E /* Debug */,
+				4B74FFEB1BD7FCD6003EEC2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B74FFBB1BD7FCD6003EEC2E /* Project object */;
+}
