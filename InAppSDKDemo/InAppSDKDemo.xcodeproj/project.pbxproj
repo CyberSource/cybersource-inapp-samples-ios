@@ -15,8 +15,8 @@
 		4B74FFE31BD7FCD6003EEC2E /* InAppSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFE21BD7FCD6003EEC2E /* InAppSDKDemoTests.m */; };
 		4B74FFEF1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFED1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png */; };
 		4B74FFF01BD83874003EEC2E /* cybersource_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFEE1BD83874003EEC2E /* cybersource_logo@2x.png */; };
-		4BE86C8A1BE420850000FB8B /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE86C891BE420850000FB8B /* InAppSDK.framework */; };
-		4BE86C8B1BE420850000FB8B /* InAppSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE86C891BE420850000FB8B /* InAppSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BE6802C1BEAEB4800CF20D6 /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE6802B1BEAEB4800CF20D6 /* InAppSDK.framework */; };
+		4BE6802D1BEAEB4800CF20D6 /* InAppSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE6802B1BEAEB4800CF20D6 /* InAppSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4BF98FCD1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FCC1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m */; };
 		4BF98FD01BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FCF1BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m */; };
 		4BF98FD41BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FD31BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m */; };
@@ -35,13 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4BE86C821BE3FAF00000FB8B /* Embed Frameworks */ = {
+		4BE680271BEAE26F00CF20D6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4BE86C8B1BE420850000FB8B /* InAppSDK.framework in Embed Frameworks */,
+				4BE6802D1BEAEB4800CF20D6 /* InAppSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +62,7 @@
 		4B74FFE21BD7FCD6003EEC2E /* InAppSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoTests.m; sourceTree = "<group>"; };
 		4B74FFED1BD83874003EEC2E /* cybersource_logo_tab_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cybersource_logo_tab_bar@2x.png"; sourceTree = "<group>"; };
 		4B74FFEE1BD83874003EEC2E /* cybersource_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cybersource_logo@2x.png"; sourceTree = "<group>"; };
-		4BE86C891BE420850000FB8B /* InAppSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InAppSDK.framework; path = Frameworks/InAppSDK.framework; sourceTree = "<group>"; };
+		4BE6802B1BEAEB4800CF20D6 /* InAppSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InAppSDK.framework; path = Frameworks/InAppSDK.framework; sourceTree = "<group>"; };
 		4BF98FCB1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoCardFieldsValidator.h; sourceTree = "<group>"; };
 		4BF98FCC1BE7DC7300B8F5F6 /* InAppSDKDemoCardFieldsValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoCardFieldsValidator.m; sourceTree = "<group>"; };
 		4BF98FCE1BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoStringValidator.h; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BE86C8A1BE420850000FB8B /* InAppSDK.framework in Frameworks */,
+				4BE6802C1BEAEB4800CF20D6 /* InAppSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +97,7 @@
 		4B74FFBA1BD7FCD6003EEC2E = {
 			isa = PBXGroup;
 			children = (
-				4BE86C891BE420850000FB8B /* InAppSDK.framework */,
+				4BE6802B1BEAEB4800CF20D6 /* InAppSDK.framework */,
 				4B74FFC51BD7FCD6003EEC2E /* InAppSDKDemo */,
 				4B74FFDF1BD7FCD6003EEC2E /* InAppSDKDemoTests */,
 				4B74FFC41BD7FCD6003EEC2E /* Products */,
@@ -174,7 +174,7 @@
 				4B74FFBF1BD7FCD6003EEC2E /* Sources */,
 				4B74FFC01BD7FCD6003EEC2E /* Frameworks */,
 				4B74FFC11BD7FCD6003EEC2E /* Resources */,
-				4BE86C821BE3FAF00000FB8B /* Embed Frameworks */,
+				4BE680271BEAE26F00CF20D6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
