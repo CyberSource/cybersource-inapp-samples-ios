@@ -116,6 +116,32 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     [self performPaymentDataEncryption];
 }
 
+-(void)scrollTextViewToBottom:(UITextView *)textView
+{
+    if(textView.text.length > 0 )
+    {
+        NSRange bottom = NSMakeRange(textView.text.length -1, 1);
+        [textView scrollRangeToVisible:bottom];
+    }
+    
+}
+
+
+-(void) updateTextViewWithMessage:(NSString*) message
+{
+    if (message != nil)
+    {
+        self.textViewShowResults.text = [self.textViewShowResults.text stringByAppendingString:message];
+        self.textViewShowResults.text = [self.textViewShowResults.text stringByAppendingString:@"\n"];
+    }
+    else
+    {
+        self.textViewShowResults.text = [self.textViewShowResults.text stringByAppendingString:@"Empty Message\n"];
+    }
+    
+    [self scrollTextViewToBottom:self.textViewShowResults];
+}
+
 -(void) performPaymentDataEncryption
 {
     
@@ -176,6 +202,8 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
 {
     NSMutableString* statusMsg = [NSMutableString new];
     
+    [statusMsg appendFormat: @"\nEncrypt Service Response:"];
+    
     if(paramError != nil || paramResponseData != nil)
     {
     
@@ -198,12 +226,7 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     
     [self.activityIndicatorInAppSDKDemo stopAnimating];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Encrypt Service Response"
-                                                    message:statusMsg
-                                                   delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                                          otherButtonTitles:nil];
-    [alert show];
+    [self updateTextViewWithMessage:statusMsg];
     
     //If Needed We can clear the UI Controls and memebers.
     [self initializeUIControls];

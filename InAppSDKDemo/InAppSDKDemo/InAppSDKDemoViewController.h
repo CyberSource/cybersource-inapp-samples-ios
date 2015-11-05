@@ -19,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *encryptPaymentButton;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorInAppSDKDemo;
+@property (weak, nonatomic) IBOutlet UITextView *textViewShowResults;
 @end
