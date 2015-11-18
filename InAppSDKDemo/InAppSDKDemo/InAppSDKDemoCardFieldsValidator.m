@@ -116,9 +116,9 @@
     
     if ([cardNumber length])
     {
-        int elementsCount = [cardNumber length];
+        NSInteger elementsCount = [cardNumber length];
         
-        int arrayOfIntegers[elementsCount];
+        NSInteger arrayOfIntegers[elementsCount];
         
         for (NSInteger index = 0; index < elementsCount; index++)
         {
