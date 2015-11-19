@@ -11,6 +11,7 @@
 #import <InAppSDK/InAppSDK.h>
 #import <InAppSDK/InAppSDKCardData.h>
 #import <InAppSDK/InAppSDKGatewayProtocol.h>
+#import <InAppSDK/InAppSDKAddress.h>
 #import "InAppSDKDemoCardFieldsValidator.h"
 #import "InAppSDKDemoStringValidator.h"
 #import "InAppSDKDemoSignatureGenerator.h"
@@ -93,6 +94,7 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     
     return color;
 }
+
 -(void) initializeUIControls
 {
     self.cardNumberTextField.text = @"";
@@ -145,8 +147,20 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     [self scrollTextViewToBottom:self.textViewShowResults];
 }
 
+-(InAppSDKAddress *) getBillToData
+{
+    InAppSDKAddress * billToInfo = [[InAppSDKAddress alloc] init];
+    billToInfo.firstName = @"TestFirstName";
+    billToInfo.lastName = @"TestLastName";
+    billToInfo.postalCode = @"98004";
+    
+    return billToInfo;
+}
+
+
 -(void) performPaymentDataEncryption
 {
+    BOOL result = NO;
     
     //Collect the payment data.
     InAppSDKCardData * cardData = [[InAppSDKCardData alloc] init];
@@ -157,6 +171,9 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     
     //Creat Transaction Object.
     InAppSDKTransactionObject * transactionObject = [[InAppSDKTransactionObject alloc]init];
+    
+    //Set First Name, Last Name and Postal Code. These are optional Values, not mandatory.
+    transactionObject.billTo = [self getBillToData];
     
     //Assign the card data obtained.
     transactionObject.cardData = cardData;
@@ -170,7 +187,16 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     //Obtain the gateway sharted instance.
     InAppSDKGateway * gatway = [InAppSDKGateway sharedInstance];
     
-    [gatway performPaymentDataEncryption:transactionObject withDelegate:self];
+    result = [gatway performPaymentDataEncryption:transactionObject withDelegate:self];
+    
+    if (result)
+    {
+        NSLog(@"InAppSDK: Request Accepted. Expect the response in the delegate method.");
+    }
+    else
+    {
+        NSLog(@"InAppSDK: Request NOT Accepted. Verify the input values if any one is invalid.");
+    }
     
 }
 
@@ -178,7 +204,6 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
 {
     InAppSDKMerchant *merchantData = [[InAppSDKMerchant alloc] init];
     
-    merchantData.userName = kInAppSDKDemoTestMerchantID;
     merchantData.merchantID = kInAppSDKDemoTestMerchantID;
     merchantData.merchantReferenceCode = kInAppSDKDemoTestMerchantReferenceNumber;
     
@@ -212,11 +237,21 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     
         if (paramResponseData)
         {
-            [statusMsg appendFormat: @"\nAccepted: %@", paramResponseData.isAccepted ? @"Yes" : @"No"];
+            [statusMsg appendFormat:@"\nAccepted  : %@", paramResponseData.isAccepted ? @"Yes" : @"No"];
+            if (paramResponseData.requestId)
+            {
+                [statusMsg appendFormat:@"\nRequestID : %@", paramResponseData.requestId];
+            }
+            
+            if (paramResponseData.resultCode)
+            {
+                [statusMsg appendFormat:@"\nResultCode: %@", paramResponseData.resultCode];
+            }
+            
         }
         if (paramError)
         {
-            [statusMsg appendFormat:@"\nError: %@", paramError.localizedDescription];
+            [statusMsg appendFormat:@"\nError     : %@", paramError.localizedDescription];
         }
         
         if(paramResponseData.isAccepted)
