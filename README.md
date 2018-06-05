@@ -8,3 +8,5 @@ git clone https://github.com/CyberSource/cybersource-ios-samples
 ````
 
 Open the project XCode and run.
+
+Added BitCode Support
