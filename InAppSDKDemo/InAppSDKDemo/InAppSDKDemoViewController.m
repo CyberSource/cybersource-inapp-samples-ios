@@ -184,6 +184,9 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     //Set the End point / Environment. Test or Live
     [InAppSDKSettings sharedInstance].inAppSDKEnvironment = INAPPSDK_ENV_TEST;
     
+    //Enable log for debugging
+    [InAppSDKSettings sharedInstance].enableLog = YES;
+    
     //Obtain the gateway sharted instance.
     InAppSDKGateway * gatway = [InAppSDKGateway sharedInstance];
     
