@@ -20,8 +20,8 @@
 		4BF98FD41BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FD31BE7FCD800B8F5F6 /* InAppSDKDemoViewController.m */; };
 		4BF98FD91BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98FD81BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m */; };
 		4BF98FDB1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF98FDA1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png */; };
-		F8BA729F2161FACF00457278 /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BA729E2161FACF00457278 /* InAppSDK.framework */; };
-		F8BA72A02161FACF00457278 /* InAppSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8BA729E2161FACF00457278 /* InAppSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8D07ECC21C45FA700B390AA /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D07ECB21C45FA700B390AA /* InAppSDK.framework */; };
+		F8D07ECD21C45FA700B390AA /* InAppSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8D07ECB21C45FA700B390AA /* InAppSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F8BA72A02161FACF00457278 /* InAppSDK.framework in Embed Frameworks */,
+				F8D07ECD21C45FA700B390AA /* InAppSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +73,7 @@
 		4BF98FD71BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoSignatureGenerator.h; sourceTree = "<group>"; };
 		4BF98FD81BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoSignatureGenerator.m; sourceTree = "<group>"; };
 		4BF98FDA1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cybersource_logo_Demo@2x.png"; sourceTree = "<group>"; };
-		F8BA729E2161FACF00457278 /* InAppSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InAppSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8D07ECB21C45FA700B390AA /* InAppSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InAppSDK.framework; path = Frameworks/InAppSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8BA729F2161FACF00457278 /* InAppSDK.framework in Frameworks */,
+				F8D07ECC21C45FA700B390AA /* InAppSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +98,8 @@
 		4B74FFBA1BD7FCD6003EEC2E = {
 			isa = PBXGroup;
 			children = (
-				F8BA729E2161FACF00457278 /* InAppSDK.framework */,
 				4BE6802B1BEAEB4800CF20D6 /* InAppSDK.framework */,
+				F8D07ECB21C45FA700B390AA /* InAppSDK.framework */,
 				4B74FFC51BD7FCD6003EEC2E /* InAppSDKDemo */,
 				4B74FFDF1BD7FCD6003EEC2E /* InAppSDKDemoTests */,
 				4B74FFC41BD7FCD6003EEC2E /* Products */,
@@ -407,6 +407,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/InAppSDKDemo/InAppSDKDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -430,6 +431,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/InAppSDKDemo/InAppSDKDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
