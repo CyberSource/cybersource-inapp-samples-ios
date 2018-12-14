@@ -22,12 +22,12 @@
 // Sample Test Merchant Credentials
 
 // This is CyberSource Merchant ID, the value used to log into the EBC
-static NSString* kInAppSDKDemoTestMerchantID = @"test_paymentech_001";
+static NSString* kInAppSDKDemoTestMerchantID = @"testrest";
 
 // This is the SOAP Toolkit Transaction Key
 // You can manage these keys here: https://ebctest.cybersource.com/ebctest
 
-static NSString* kInAppSDKDemoTestTransactionSecretKey = @"r1bngjB1sJIz6HrmFdBubAh46xMVHWwsjw66AzlHksJW3TrAnXNiuoWOjA21zv/7ipfk9L7dPXbQat09UiYcD6l8534vVMKzlL0+os2kFHA1nwgOIct8f6PLJqGw+FnXvYPDllNrFgvtXELoP8JzTDP4HwmWA7XRp4tC0Bsq3pKP1w1iXj2CTXV3T+FtL4nXC3XxkDEVQN8jTTBGniQOGfMlFoVkzkhjOPwMy94fUVS0/PwSZit12gqPJ7/xE07oC5+EV+XGEjXZuEaKtSNJECN51qkcKHpikdaXKJT42oXOFLGLgh/SbcJtgjVWRarbf/P9E27lzuIS8pNX9HKJdQ==";
+static NSString* kInAppSDKDemoTestTransactionSecretKey = @"v6ine2CxLgv/0tAZaUL72RH38frW/QrkBhbTAhQiOjq2uY1Mn9zdFftQYb9YlCqXrF2sE+zrh1HMoooEHUUJ3P3S2KNQriVzSWhsxc9+kAZRsqk5lIn1YxpryXjMlhTyb8nQqKcRaQeObrzJaQ3kWB8NGJDdrKCyO6emevzKz0/YnBJW8k7w14GDLOfaEb9IC/Kz70Cb7icUwS2WVqg5JCOb676j2jrXKqMugOl/2WRBwRTlVo20QkEjk1aQTg1VTWuzHIbl3vjlFQGL1xGahyJ1ELUibQGkScrzBdRciAe3zNfyjHobl8BxFUcL6bHMMWP2o5t57ensJbjDh2PfZQ==";
 
 static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345";
 
