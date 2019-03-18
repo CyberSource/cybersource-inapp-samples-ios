@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EBBD170223F73810087D64C /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD16F223F73810087D64C /* ApplePayViewController.swift */; };
+		2EBBD171223F73810087D64C /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD16F223F73810087D64C /* ApplePayViewController.swift */; };
 		4B74FFC91BD7FCD6003EEC2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFC81BD7FCD6003EEC2E /* main.m */; };
 		4B74FFCC1BD7FCD6003EEC2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFCB1BD7FCD6003EEC2E /* AppDelegate.m */; };
 		4B74FFD21BD7FCD6003EEC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFD01BD7FCD6003EEC2E /* Main.storyboard */; };
@@ -49,6 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2EBBD16D223F73810087D64C /* InAppSDKDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InAppSDKDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		2EBBD16E223F73810087D64C /* InAppSDKDemoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InAppSDKDemoTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		2EBBD16F223F73810087D64C /* ApplePayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplePayViewController.swift; sourceTree = "<group>"; };
+		2EBBD172223F92990087D64C /* InAppSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InAppSDKDemo.entitlements; sourceTree = "<group>"; };
 		4B74FFC31BD7FCD6003EEC2E /* InAppSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InAppSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74FFC71BD7FCD6003EEC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B74FFC81BD7FCD6003EEC2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,7 +124,9 @@
 		4B74FFC51BD7FCD6003EEC2E /* InAppSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2EBBD172223F92990087D64C /* InAppSDKDemo.entitlements */,
 				4BF98FDA1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png */,
+				2EBBD16F223F73810087D64C /* ApplePayViewController.swift */,
 				4BF98FD71BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.h */,
 				4BF98FD81BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m */,
 				4BF98FD21BE7FCD800B8F5F6 /* InAppSDKDemoViewController.h */,
@@ -136,6 +144,8 @@
 				4B74FFD31BD7FCD6003EEC2E /* Images.xcassets */,
 				4B74FFD51BD7FCD6003EEC2E /* LaunchScreen.xib */,
 				4B74FFC61BD7FCD6003EEC2E /* Supporting Files */,
+				2EBBD16D223F73810087D64C /* InAppSDKDemo-Bridging-Header.h */,
+				2EBBD16E223F73810087D64C /* InAppSDKDemoTests-Bridging-Header.h */,
 			);
 			path = InAppSDKDemo;
 			sourceTree = "<group>";
@@ -216,10 +226,18 @@
 				TargetAttributes = {
 					4B74FFC21BD7FCD6003EEC2E = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 47PAWXB6W8;
+						DevelopmentTeam = 8WQ4DJVQC2;
+						LastSwiftMigration = 1010;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
 					};
 					4B74FFDB1BD7FCD6003EEC2E = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 1010;
 						TestTargetID = 4B74FFC21BD7FCD6003EEC2E;
 					};
 				};
@@ -277,6 +295,7 @@
 				4B74FFCC1BD7FCD6003EEC2E /* AppDelegate.m in Sources */,
 				4B74FFC91BD7FCD6003EEC2E /* main.m in Sources */,
 				4BF98FD01BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m in Sources */,
+				2EBBD170223F73810087D64C /* ApplePayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EBBD171223F73810087D64C /* ApplePayViewController.swift in Sources */,
 				4B74FFE31BD7FCD6003EEC2E /* InAppSDKDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +423,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 47PAWXB6W8;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = InAppSDKDemo/InAppSDKDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WQ4DJVQC2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/**",
@@ -418,8 +442,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = CyberSource.InAppSDKDemoTest;
+				PRODUCT_BUNDLE_IDENTIFIER = net.authorize.AuthnetLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "InAppSDKDemo/InAppSDKDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -427,7 +455,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 47PAWXB6W8;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = InAppSDKDemo/InAppSDKDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WQ4DJVQC2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/**",
@@ -442,15 +474,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = CyberSource.InAppSDKDemoTest;
+				PRODUCT_BUNDLE_IDENTIFIER = net.authorize.AuthnetLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "InAppSDKDemo/InAppSDKDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		4B74FFEA1BD7FCD6003EEC2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -460,6 +497,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CyberSource.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InAppSDKDemo/InAppSDKDemoTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InAppSDKDemo.app/InAppSDKDemo";
 			};
 			name = Debug;
@@ -467,12 +507,16 @@
 		4B74FFEB1BD7FCD6003EEC2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = InAppSDKDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CyberSource.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InAppSDKDemo/InAppSDKDemoTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InAppSDKDemo.app/InAppSDKDemo";
 			};
 			name = Release;
