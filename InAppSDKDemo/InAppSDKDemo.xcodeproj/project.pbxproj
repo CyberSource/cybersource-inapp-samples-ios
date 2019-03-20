@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EBBD170223F73810087D64C /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD16F223F73810087D64C /* ApplePayViewController.swift */; };
-		2EBBD171223F73810087D64C /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD16F223F73810087D64C /* ApplePayViewController.swift */; };
+		2EBBD170223F73810087D64C /* InAppSDKApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD16F223F73810087D64C /* InAppSDKApplePayViewController.swift */; };
+		2EBBD171223F73810087D64C /* InAppSDKApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD16F223F73810087D64C /* InAppSDKApplePayViewController.swift */; };
 		4B74FFC91BD7FCD6003EEC2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFC81BD7FCD6003EEC2E /* main.m */; };
 		4B74FFCC1BD7FCD6003EEC2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B74FFCB1BD7FCD6003EEC2E /* AppDelegate.m */; };
 		4B74FFD21BD7FCD6003EEC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B74FFD01BD7FCD6003EEC2E /* Main.storyboard */; };
@@ -53,7 +53,7 @@
 /* Begin PBXFileReference section */
 		2EBBD16D223F73810087D64C /* InAppSDKDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InAppSDKDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		2EBBD16E223F73810087D64C /* InAppSDKDemoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InAppSDKDemoTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		2EBBD16F223F73810087D64C /* ApplePayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplePayViewController.swift; sourceTree = "<group>"; };
+		2EBBD16F223F73810087D64C /* InAppSDKApplePayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppSDKApplePayViewController.swift; sourceTree = "<group>"; };
 		2EBBD172223F92990087D64C /* InAppSDKDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InAppSDKDemo.entitlements; sourceTree = "<group>"; };
 		4B74FFC31BD7FCD6003EEC2E /* InAppSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InAppSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74FFC71BD7FCD6003EEC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			children = (
 				2EBBD172223F92990087D64C /* InAppSDKDemo.entitlements */,
 				4BF98FDA1BE81C5600B8F5F6 /* cybersource_logo_Demo@2x.png */,
-				2EBBD16F223F73810087D64C /* ApplePayViewController.swift */,
+				2EBBD16F223F73810087D64C /* InAppSDKApplePayViewController.swift */,
 				4BF98FD71BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.h */,
 				4BF98FD81BE80B2E00B8F5F6 /* InAppSDKDemoSignatureGenerator.m */,
 				4BF98FD21BE7FCD800B8F5F6 /* InAppSDKDemoViewController.h */,
@@ -295,7 +295,7 @@
 				4B74FFCC1BD7FCD6003EEC2E /* AppDelegate.m in Sources */,
 				4B74FFC91BD7FCD6003EEC2E /* main.m in Sources */,
 				4BF98FD01BE7DCAB00B8F5F6 /* InAppSDKDemoStringValidator.m in Sources */,
-				2EBBD170223F73810087D64C /* ApplePayViewController.swift in Sources */,
+				2EBBD170223F73810087D64C /* InAppSDKApplePayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EBBD171223F73810087D64C /* ApplePayViewController.swift in Sources */,
+				2EBBD171223F73810087D64C /* InAppSDKApplePayViewController.swift in Sources */,
 				4B74FFE31BD7FCD6003EEC2E /* InAppSDKDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -422,7 +422,7 @@
         <!--Checkout-->
         <scene sceneID="OOH-sD-4qd">
             <objects>
-                <viewController id="EiT-pP-QDT" customClass="ApplePayViewController" customModule="InAppSDKDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EiT-pP-QDT" customClass="InAppSDKApplePayViewController" customModule="InAppSDKDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gtN-Pm-3Ii"/>
                         <viewControllerLayoutGuide type="bottom" id="9pm-cg-Cfn"/>

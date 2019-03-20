@@ -9,12 +9,16 @@
 import Foundation
 import PassKit
 
-class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControllerDelegate, UITextFieldDelegate {
+// NOTE: Provide the apple merchant identifier associated with your Apple Pay CSR
+let merchantIdentifier = "merchant.authorize.net.test.dev15"
+
+class InAppSDKApplePayViewController:UIViewController, PKPaymentAuthorizationViewControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var applePayButton:UIButton!
     @IBOutlet weak var textViewShowResults:UITextView!
     @IBOutlet weak var amountTextField:UITextField!
 
+    //Identify which card brand you are capable of accepting
     @objc let SupportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
 
     override func viewDidLoad() {
@@ -25,15 +29,13 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
     
     @IBAction func payWithApplePay(_ sender: AnyObject) {
         
-        let supportedNetworks = [ PKPaymentNetwork.amex, PKPaymentNetwork.masterCard, PKPaymentNetwork.visa ]
-        
         if PKPaymentAuthorizationViewController.canMakePayments() == false {
             let alert = UIAlertController(title: "Apple Pay is not available", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             return self.present(alert, animated: true, completion: nil)
         }
         
-        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedNetworks) == false {
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks) == false {
             let alert = UIAlertController(title: "No Apple Pay payment methods available", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             return self.present(alert, animated: true, completion: nil)
@@ -42,8 +44,7 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         let request = PKPaymentRequest()
         request.currencyCode = "USD"
         request.countryCode = "US"
-        // NOTE: Provide your own merchant identifier for Apple transaction to work
-        request.merchantIdentifier = "merchant.authorize.net.test.dev15"
+        request.merchantIdentifier = merchantIdentifier
         request.supportedNetworks = SupportedPaymentNetworks
         // DO NOT INCLUDE PKMerchantCapability.capabilityEMV
         request.merchantCapabilities = PKMerchantCapability.capability3DS
@@ -63,9 +64,11 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         print("paymentAuthorizationViewController delegates called")
 
         if payment.token.paymentData.count > 0 {
+            //base64 encode the Apple Pay encrypted payment data for submission to Cybersource
             let base64str = self.base64forData(payment.token.paymentData)
-            let messsage = String(format: "\nApple Pay Token: \n%@", base64str)
-            let alert = UIAlertController(title: "Authorization Success", message: messsage, preferredStyle: .alert)
+            let message = String(format: "\nApple Pay Token: \n%@", base64str)
+            print("\n%@", message)
+            let alert = UIAlertController(title: "Authorization Success", message: message, preferredStyle: .alert)
             self.updateTextViewWithMessage(message: base64str)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             return self.performApplePayCompletion(controller, alert: alert)
@@ -96,17 +99,17 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
     }
     
     func updateTextViewWithMessage(message : String?) {
-        let myColor = UIColor.init(red: 51.0/255.0, green: 102.0/255.0, blue: 153.0/255.0, alpha: 1.0)
+        let cybsDarkBlueColor = UIColor.init(red: 51.0/255.0, green: 102.0/255.0, blue: 153.0/255.0, alpha: 1.0)
 
-        let yourAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.green, .font: UIFont.boldSystemFont(ofSize: 20)]
-        let yourOtherAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: myColor, .font: UIFont.systemFont(ofSize: 15)]
+        let titleAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: cybsDarkBlueColor, .font: UIFont.boldSystemFont(ofSize: 20)]
+        let tokenAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.black, .font: UIFont.systemFont(ofSize: 15)]
         
         if let msg = message {
-            let partOne = NSMutableAttributedString(string: "Apple Pay Token: \n", attributes: yourAttributes)
-            let partTwo = NSMutableAttributedString(string: msg, attributes: yourOtherAttributes)
-            partOne.append(partTwo)
+            let finalStr = NSMutableAttributedString(string: "Apple Pay Token: \n", attributes: titleAttributes)
+            let tokenStr = NSMutableAttributedString(string: msg, attributes: tokenAttributes)
+            finalStr.append(tokenStr)
 
-            self.textViewShowResults.attributedText = partOne
+            self.textViewShowResults.attributedText = finalStr
         } else {
             let fullText = self.textViewShowResults.text + "Empty Message\n"
             self.textViewShowResults.text = fullText
