@@ -9,9 +9,11 @@
 import Foundation
 import PassKit
 
-class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControllerDelegate {
+class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var applePayButton:UIButton!
+    @IBOutlet weak var textViewShowResults:UITextView!
+    @IBOutlet weak var amountTextField:UITextField!
 
     @objc let SupportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
 
@@ -40,13 +42,15 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         let request = PKPaymentRequest()
         request.currencyCode = "USD"
         request.countryCode = "US"
+        // NOTE: Provide your own merchant identifier for Apple transaction to work
         request.merchantIdentifier = "merchant.authorize.net.test.dev15"
         request.supportedNetworks = SupportedPaymentNetworks
         // DO NOT INCLUDE PKMerchantCapability.capabilityEMV
         request.merchantCapabilities = PKMerchantCapability.capability3DS
         
+        let amt = Float(self.amountTextField.text!) ?? 25.00
         request.paymentSummaryItems = [
-            PKPaymentSummaryItem(label: "Total", amount: 254.00)
+            PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(value: amt))
         ]
 
         let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
@@ -60,8 +64,9 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
 
         if payment.token.paymentData.count > 0 {
             let base64str = self.base64forData(payment.token.paymentData)
-            let messsage = String(format: "Data Value: %@", base64str)
+            let messsage = String(format: "\nApple Pay Token: \n%@", base64str)
             let alert = UIAlertController(title: "Authorization Success", message: messsage, preferredStyle: .alert)
+            self.updateTextViewWithMessage(message: base64str)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             return self.performApplePayCompletion(controller, alert: alert)
         } else {
@@ -90,4 +95,79 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         return paymentString!
     }
     
+    func updateTextViewWithMessage(message : String?) {
+        let myColor = UIColor.init(red: 51.0/255.0, green: 102.0/255.0, blue: 153.0/255.0, alpha: 1.0)
+
+        let yourAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.green, .font: UIFont.boldSystemFont(ofSize: 20)]
+        let yourOtherAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: myColor, .font: UIFont.systemFont(ofSize: 15)]
+        
+        if let msg = message {
+            let partOne = NSMutableAttributedString(string: "Apple Pay Token: \n", attributes: yourAttributes)
+            let partTwo = NSMutableAttributedString(string: msg, attributes: yourOtherAttributes)
+            partOne.append(partTwo)
+
+            self.textViewShowResults.attributedText = partOne
+        } else {
+            let fullText = self.textViewShowResults.text + "Empty Message\n"
+            self.textViewShowResults.text = fullText
+        }
+        
+        self.scrollTextViewToBottom(textView: self.textViewShowResults)
+    }
+    
+    func scrollTextViewToBottom(textView : UITextView) {
+        if textView.text.count > 0 {
+            let range = NSRange(location: textView.text.count-1, length: 1)
+            textView.scrollRangeToVisible(range)
+        }
+    }
+    
+    private func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.count == 0 {
+            textField.text = "25.00"
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text, let decimalSeparator = NSLocale.current.decimalSeparator else {
+            return true
+        }
+        
+        var splitText = text.components(separatedBy: decimalSeparator)
+        let totalDecimalSeparators = splitText.count - 1
+        let isEditingEnd = (text.count - 3) < range.lowerBound
+        
+        splitText.removeFirst()
+        
+        // Check if we will exceed 2 dp
+        if
+            splitText.last?.count ?? 0 > 1 && string.count != 0 &&
+            isEditingEnd
+        {
+            return false
+        }
+        
+        // If there is already a dot we don't want to allow further dots
+        if totalDecimalSeparators > 0 && string == decimalSeparator {
+            return false
+        }
+        
+        // Only allow numbers and decimal separator
+        switch(string) {
+        case "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", decimalSeparator:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
 }
