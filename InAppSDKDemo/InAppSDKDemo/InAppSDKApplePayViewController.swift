@@ -10,7 +10,7 @@ import Foundation
 import PassKit
 
 // NOTE: Provide the apple merchant identifier associated with your Apple Pay CSR
-let merchantIdentifier = "merchant.authorize.net.test.dev15"
+let merchantIdentifier = "merchant.cybersource.net.test.dev"
 
 class InAppSDKApplePayViewController:UIViewController, PKPaymentAuthorizationViewControllerDelegate, UITextFieldDelegate {
     
@@ -65,13 +65,19 @@ class InAppSDKApplePayViewController:UIViewController, PKPaymentAuthorizationVie
 
         if payment.token.paymentData.count > 0 {
             //base64 encode the Apple Pay encrypted payment data for submission to Cybersource
-            let base64str = self.base64forData(payment.token.paymentData)
-            let message = String(format: "\nApple Pay Token: \n%@", base64str)
-            print("\n%@", message)
-            let alert = UIAlertController(title: "Authorization Success", message: message, preferredStyle: .alert)
-            self.updateTextViewWithMessage(message: base64str)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            return self.performApplePayCompletion(controller, alert: alert)
+            let paymentData = String(data: payment.token.paymentData.base64EncodedData(), encoding: .utf8)
+            if let applePayBlob = paymentData {
+                let message = String(format: "\nApple Pay Token: \n%@", applePayBlob)
+                print("\n%@", message)
+                let alert = UIAlertController(title: "Authorization Success", message: message, preferredStyle: .alert)
+                self.updateTextViewWithMessage(message: applePayBlob)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                return self.performApplePayCompletion(controller, alert: alert)
+            } else {
+                let alert = UIAlertController(title: "ApplePay payment data error!", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                return self.performApplePayCompletion(controller, alert: alert)
+            }
         } else {
             let alert = UIAlertController(title: "Authorization Failed!", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -93,8 +99,10 @@ class InAppSDKApplePayViewController:UIViewController, PKPaymentAuthorizationVie
     @objc func base64forData(_ theData: Data) -> String {
         let charSet = CharacterSet.urlQueryAllowed
 
+        let paymentString1 = NSString(data: theData, encoding: String.Encoding.utf8.rawValue)
+        print("\n%@", paymentString1 as Any)
+
         let paymentString = NSString(data: theData, encoding: String.Encoding.utf8.rawValue)!.addingPercentEncoding(withAllowedCharacters: charSet)
-        
         return paymentString!
     }
     
